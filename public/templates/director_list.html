@@ -1,9 +1,26 @@
+<script>
+$( function (){
+  $("a.director_link").click(function(){
+    let director = $(this).attr('director');
+    load_content(
+      'film_list.html', 
+      "/directors/" + director
+      )   
+  });
+
+
+
+}); 
+</script>
+
+
 <h3>Directors</h3>
+
 
 <ul>
 
 {{#directors}}
-<li> <a href="/directors/{{.}}">{{.}}</a></li>
+<li> <a class="director_link" director="{{.}}" href="#">{{.}}</a></li>
 {{/directors}}
   
 </ul>
